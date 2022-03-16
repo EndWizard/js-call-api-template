@@ -13,7 +13,7 @@ searchText.onkeydown = async function (event) {
 
     // Här anropas funktionen som ansvarar för att "rendera" (alltså rita ut) resultatet
     renderResults(results)
-
+    
     // TODO: Skriv kod för att tömma sökfältet igen
   }
 }
@@ -28,7 +28,7 @@ async function search(searchString) {
     */
 
   //Här bygger vi upp den URL som vi ska använda i vårat anrop till APIet.
-  let apiKey = "" //TODO: Lägg in API-nyckeln från Classroom här.
+  let apiKey = "1a08c634ec1bc9d64558c15c3e88cdbf" 
   var url = `https://api.themoviedb.org/3/search/movie?query=${searchString}&api_key=${apiKey}`
   console.log("Den URL vi kommer anropa: ", url)
 
@@ -50,15 +50,15 @@ function renderResults(res) {
   // Använd console.log() för att skriva ut resultatet till konsollen och titta på det.
   // Det är ofta bra att titta på hur resultatet ser ut för att få en förståelse för
   // hur man kan skriva koden för att använda resultatet.
-  console.log(res)
+  //console.log(res)
 
   // TODO: Hämta ut attributet av variablen res (res.results) som innehåller listan med resultat
   // och tilldela variablen allObjects det värdet.
-  let allObjects = []
+  let allObjects = [res.results]
+  console.log(allObjects)
 
   // Den här loopen används för att lägga in något i DOMen för varje objekt (film) i resultatet.
   allObjects.forEach((object) => {
-    // TODO: lägg in en div i resultDiv för varje objekt
-    // du kan använda t.ex. resultDiv.insertAdjacentHTML("beforeend", "en sträng med html")
+  resultDiv.insertAdjacentHTML("beforeend", "en sträng med html")
   })
 }
